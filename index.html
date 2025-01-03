@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buổi Hẹn</title>
     <style>
-        
         * {
     padding: 0;
-    border: 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -17,7 +15,11 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
     background-size: 300% 300%;
-    animation: gradientBG 10s ease infinite;
+    animation: gradientBG 10s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 @keyframes gradientBG {
@@ -27,266 +29,144 @@ body {
 }
 
 .container {
-    margin-top: 60px;
-    max-width: 100%;
-    font-family: 'Courier New', Courier, monospace;
+    width: 375px; /* Kích thước cố định như iPhone XS */
+    margin: 20px auto;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .title {
-    text-align: center;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.title:hover {
-    transform: scale(1.1);
-    color: darkred;
-}
-
-.content {
-    margin-top: 50px;
-    width: 100%;
-    height: 400px; /* Chiều cao của ảnh */
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-size: contain; /* Hiển thị toàn bộ ảnh */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #f0f0f0; /* Màu nền khi ảnh không phủ hết */
-    animation: changeContentBG 20s infinite;
-}
-
-
-@keyframes changeContentBG {
- 0% { background-image: url('https://tamtran22102004.github.io/schdule-date1/image/img1.jpg'); }
-    25% { background-image: url('https://tamtran22102004.github.io/schdule-date1/image/img2.jpg'); }
-    50% { background-image: url('https://tamtran22102004.github.io/schdule-date1/image/img3.jpg'); }
-    75% { background-image: url('https://tamtran22102004.github.io/schdule-date1/image/img4.jpg'); }
-    100% { background-image: url('https://tamtran22102004.github.io/schdule-date1/image/img1.jpg'); }
-}
-
-.item1, .item2, .item3, .item4 {
-    position: absolute;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 10px;
-    padding: 10px;
-    color: white; /* Màu chữ nổi bật */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Hiệu ứng bóng chữ */
-    background-color: rgb(237, 181, 191);
-
-}
-
-.item1 {
-    top: -5px;
-    right: 520px;
-}
-
-.item2 {
-    left: 580px;
-    text-align: right;
-    top: 100px;
-}
-
-.item3 {
-    top: 200px;
-    right: 550px;
-}
-
-.item4 {
-    left: 610px;
-    text-align: right;
-    top: 300px;
-}
-
-.item1:hover, .item2:hover, .item3:hover, .item4:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 223, 186, 0.8);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.Line {
-    position: absolute;
-    width: 5px;
-    height: 400px;
-    background-color: black;
-    transition: background-color 0.3s ease;
-}
-
-.Line:hover {
-    background-color: gray;
-}
-
-.Circle {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border-radius: 100px;
-    background-color: gray;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.Circle:nth-child(1) {
-    top: -5px;
-    right: -5px;
-}
-
-.Circle:nth-child(2) {
-    top: 100px;
-    right: -5px;
-}
-
-.Circle:nth-child(3) {
-    top: 200px;
-    right: -5px;
-}
-
-.Circle:nth-child(4) {
-    top: 300px;
-    right: -5px;
-}
-
-.Circle:nth-child(5) {
-    top: 390px;
-    right: -5px;
-}
-
-.Circle:hover {
-    transform: scale(1.2);
-    background-color: darkgray;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    padding: 20px;
 }
 
 .title h1 {
+    font-size: 1.5rem;
     animation: pulse 2s infinite;
+    color: #333;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 #countdown {
-    text-align: center;
     margin: 20px auto;
-    font-size: 1.5rem;
-    color: white;
+    font-size: 1.2rem;
+    color: #444;
 }
 
 .clock {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
 .clock div {
+    padding: 8px 12px;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 10px 20px;
+    border-radius: 5px;
+    color: #d65ab3;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.clock div:hover {
+    transform: scale(1.05);
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    background-color: #f0f0f0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: changeContentBG 20s infinite ease-in-out;
+}
+
+@keyframes changeContentBG {
+    0% { background-image: url('./image/img1.jpg'); }
+    25% { background-image: url('./image/img2.jpg'); }
+    50% { background-image: url('./image/img3.jpg'); }
+    75% { background-image: url('./image/img4.jpg'); }
+    100% { background-image: url('./image/img1.jpg'); }
+}
+
+.item1, .item2, .item3, .item4 {
+    position: absolute;
+    padding: 0 10px 10px 10px;
+    background-color: rgb(192, 164, 164);
     color: white;
-    font-size: 1.2rem;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-@media (max-width: 1024px) {
-.content {
-height: auto;
-flex-direction: column;
-justify-content: flex-start;
+    font-weight: bold;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    width: 80%; /* Kích thước vừa phải cho item */
+
 }
 
-.item1, .item2, .item3, .item4 {
-flex: 1 1 48%;
-max-width: 48%;
-margin: 5px;
+.item1 { top: 50px; right: 10%; }
+.item2 { top: 150px; left: 10%; }
+.item3 { top: 250px; right: 10%; }
+.item4 { top: 350px; left: 10%; }
+
+.item1:hover, .item2:hover, .item3:hover, .item4:hover {
+    background-color: rgba(255, 223, 186, 0.9);
+    transform: scale(1.05);
 }
 
-.clock div {
-font-size: 1rem;
-padding: 8px 12px;
-}
-}
-
-
-@media (max-width: 1024px) {
-.content {
-flex-wrap: wrap;
-height: auto;
+.Line {
+    position: absolute;
+    top: 0;
+    left: 8%;
+    border: 50px;
+    width: 2px;
+    height: 100%;
+    background-color: white;
+    z-index: 0; /* Đảm bảo Line luôn nằm phía sau các item */
 }
 
-.item1, .item2, .item3, .item4 {
-flex: 1 1 48%;
-max-width: 48%;
-margin: 10px 1%;
+.Circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1; /* Đảm bảo Circle hiển thị trên Line */
 }
 
-.clock div {
-font-size: 1rem;
-padding: 10px 15px;
-}
+.Circle:nth-child(1) { top: 50px; left: calc(50% - 7px); }
+.Circle:nth-child(2) { top: 150px; left: calc(50% - 7px); }
+.Circle:nth-child(3) { top: 250px; left: calc(50% - 7px); }
+.Circle:nth-child(4) { top: 350px; left: calc(50% - 7px); }
+.Circle:nth-child(5) { top: 450px; left: calc(50% - 7px); }
 
-.title h1 {
-font-size: 2rem;
-}
-}
+@media (max-width: 375px) {
+    .title h1 {
+        font-size: 1.2rem;
+    }
 
-@media (max-width: 768px) {
-.content {
-flex-wrap: wrap;
-padding: 10px;
-}
+    .clock div {
+        font-size: 0.8rem;
+        padding: 6px 8px;
 
-.item1, .item2, .item3, .item4 {
-flex: 1 1 100%;
-max-width: 100%;
-margin: 10px 0;
-}
+    }
 
-.clock div {
-font-size: 0.9rem;
-padding: 8px 12px;
-}
-
-.title h1 {
-font-size: 1.8rem;
-}
-
-#countdown {
-font-size: 1rem;
-}
-}
-
-@media (max-width: 480px) {
-.title h1 {
-font-size: 1.5rem;
-}
-
-.content {
-padding: 5px;
-}
-
-.item1, .item2, .item3, .item4 {
-padding: 8px;
-margin: 8px 0;
-}
-
-.clock div {
-font-size: 0.8rem;
-padding: 6px 10px;
-}
-
-#countdown {
-font-size: 0.9rem;
-}
+    .item1, .item2, .item3, .item4 {
+        font-size: 0.8rem;
+        width: 75%;
+    }
 }
 
     </style>
+    
+
 </head>
 <body>
     <div class="container">
@@ -305,52 +185,55 @@ font-size: 0.9rem;
         <div class="content">
             <div class="item1">
                 <strong>6:00 PM</strong>
-                <p>Đón em ở nhà sinh viên</p>
+                <p>Đón cậu ở nhà sinh viên</p>
             </div>
             <div class="item2">
                 <strong>6:30 PM</strong>
-                <p>Ăn tối Gogi ở <br>Gigamall Thủ Đức</p>
+                <p>Ăn tối Gogi ở Gigamall Thủ Đức</p>
             </div>
             <div class="item3">
                 <strong>8:00 PM</strong>
-                <p>Uống tà tưa cùng em</p>
+                <p>Uống tà tưa he </p>
             </div>
             <div class="item4">
                 <strong>9:00 PM</strong>
-                <p>Đưa em về nhà</p>
+                <p>Đưa cậu về nhà</p>
             </div>
             <div class="Line">
                 <div class="Circle"></div>
                 <div class="Circle"></div>
                 <div class="Circle"></div>
                 <div class="Circle"></div>
-                <div class="Circle"></div>
             </div>
+        </div>
+        <div class="title">
+            <h1>Nôn Nao Quá Đi À</h1>
+            <strong>Không Được Boom Nghe Chưa</strong>
         </div>
     </div>
 
-    <script >
+    <script>
         function updateCountdown() {
-    const eventDate = new Date('2025-01-05T18:00:00');
-    const now = new Date();
-    const timeDifference = eventDate - now;
+            const eventDate = new Date('2025-01-05T18:00:00');
+            const now = new Date();
+            const timeDifference = eventDate - now;
 
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    document.getElementById('days').innerHTML = `${days}<br>Days`;
-    document.getElementById('hours').innerHTML = `${hours}<br>Hours`;
-    document.getElementById('minutes').innerHTML = `${minutes}<br>Minutes`;
-    document.getElementById('seconds').innerHTML = `${seconds}<br>Seconds`;
+            document.getElementById('days').innerHTML = `${days}<br>Days`;
+            document.getElementById('hours').innerHTML = `${hours}<br>Hours`;
+            document.getElementById('minutes').innerHTML = `${minutes}<br>Minutes`;
+            document.getElementById('seconds').innerHTML = `${seconds}<br>Seconds`;
 
-    if (timeDifference < 0) {
-        document.getElementById('countdown').innerHTML = "Sự kiện đã bắt đầu!";
-    }
-}
+            if (timeDifference < 0) {
+                document.getElementById('countdown').innerHTML = "Sự kiện đã bắt đầu!";
+            }
+        }
 
-setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
